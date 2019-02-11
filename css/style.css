@@ -148,7 +148,7 @@
     min-height: 460px;
     height: 460px;
     width: 320px;
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
     position: absolute;
     right: 15px;
@@ -237,8 +237,8 @@ a > .textApp {
     text-decoration: underline;
 }
 
-.simpleNav > .divApps > div > .appsBox > .otherApps > #moreApps:checked  ~ .simpleNav > .divApps {
-	overflow-y: auto;
+.appsBox:not(.otherApps>#moreApps:checked){
+	overflow-y: hidden;
 }
 
 #myAccount {
@@ -333,6 +333,12 @@ a > .textApp {
     padding: 0 16px;
     text-align: center;
     height: 36px;
+}
+
+#btn1:hover, #btn2:hover {
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #222;
 }
 
 @media screen and (max-width: 380px) {
