@@ -31,21 +31,16 @@
 	text-decoration: underline;
 }
 
-/* mail start */
 .mail {
 	line-height: 30px;
 	margin: 0 10px 0 0;
-}    
-/* mail end */
+}  
 
-/* images start */
 .images {
 	line-height: 30px;
 	margin: 0 10px 0 0;
 }    
-/* images end */
 
-/* applications start*/
 #applications {
 	display: none;
 }
@@ -68,9 +63,15 @@
 #applications:checked + .appsBox {
 	display: block; 
 }
-/* applications end*/
 
-/* ring start*/
+#applications:checked ~ .cornerTop {
+    display: block;
+}
+
+#applications:checked ~ .cornerButtom {
+    display: block;
+}
+
 .ring {
     background-color: rgba(0,0,0,.55);
     border-radius: 50%;
@@ -91,9 +92,7 @@
 	opacity: 1;
 	background-color: rgba(0,0,0,.85)
 }
-/* ring end*/
 
-/* ring account*/
 .account {
 	background-image: url(../img/myAccount.png);
     background-color: rgb(36, 137, 19);
@@ -109,9 +108,35 @@
     text-decoration: none;
     margin: -24px 0px 0px 5px;
 }
-/* ring account*/
 
-/* apps start*/
+.cornerTop {    
+    border-color: transparent;
+    border-style: dashed dashed solid;
+    border-width: 0 8.5px 8.5px;
+    display: none;
+    position: absolute;
+    right: 102px;
+    height: 0;
+    width: 0;
+    border-bottom-color: rgba(0,0,0,.2);
+    top: 45.5px;
+    z-index: 1;
+}
+
+.cornerButtom {
+    border-color: transparent;
+    border-bottom-color: #fff;
+    border-style: dashed dashed solid;
+    border-width: 0 8.5px 8.5px;
+    display: none;
+    position: absolute;
+    right: 102px;
+    top: 48px;
+    height: 0;
+    width: 0;
+    z-index: 1;
+}
+
 .appsBox {
 	display: none;
     background: #fff;
@@ -119,19 +144,21 @@
     border-color: rgba(0,0,0,.2);
     box-shadow: 0 2px 10px rgba(0,0,0,.2);
     color: #000;
-    max-height: 879px;
-    min-height: 196px;
-    height: 496px;
+    max-height: 460px;
+    min-height: 460px;
+    height: 460px;
     width: 320px;
-    overflow-y: auto;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
     position: absolute;
     right: 15px;
     top: 44px;   
     transition: height .2s ease-in-out; 
+    margin-top: 10px;
 }
 
 .appsBox > .mainApps {
+    max-height: 404px;
     min-height: 100px;
     padding: 28px;
     padding-right: 27px;
@@ -152,7 +179,7 @@
 }
 
 .app:focus {
-	border: 1px solid #e5e5e5;
+	border: 1px solid #aeb5ff;
 }
 
 a > .iconApp {
@@ -176,23 +203,52 @@ a > .textApp {
 
 .otherApps {
     display: block;
-    line-height: 40px;
+    line-height: 60px;
     text-align: center;
     width: 320px;
+    background: #f5f5f5;
+    cursor: pointer;
+    height: 60px; 
+    position: fixed;
+    bottom: 454px;   
 }
 
 .otherApps > input {
 	display: none;
 }
 
+.otherApps > label {
+	cursor: pointer;
+}
+
+.linkToOtherApps {
+    bottom: -215px;
+    position: relative;
+    padding: 25px;
+    text-align: center;
+}
+
+.linkToOtherApps > a {
+    color: rgba(0,0,0,0.87);
+    text-decoration: none;
+}
+
+.linkToOtherApps > a:hover {
+    text-decoration: underline;
+}
+
+.simpleNav > .divApps > div > .appsBox > .otherApps > #moreApps:checked  ~ .simpleNav > .divApps {
+	overflow-y: auto;
+}
+
 #myAccount {
 	background-image: url(../img/account.jpg);
 	background-size: 67px 67px;
 }
-/* apps end */
 
 .logo {
 	padding-top: 250px;
+	padding-bottom: 20px;
 	text-align: center;
 }
 
@@ -278,7 +334,6 @@ a > .textApp {
     text-align: center;
     height: 36px;
 }
-
 
 @media screen and (max-width: 380px) {
 	.simpleNav {
