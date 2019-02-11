@@ -3,23 +3,21 @@
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
-	width: 100%;
 }
 
 .simpleNav {
 	font-family: sans-serif;
 	font-size: 13px;
 	float: right;
-	width: 15%;
 }
 
-.simpleNav> div {
+.simpleNav > div {
 	display: inline-block; 
 	cursor: pointer;
     vertical-align: middle;	
 }
 
-.divLinks> div, .divApps>div {
+.divLinks > div, .divApps > div {
 	display: inline-block;
 }
 
@@ -46,19 +44,10 @@
 	margin: 0 10px 0 0;
 }    
 /* images end */
-/* apps start*/
-.apps {
-	display: block;
-	border: 2px solid green;
-	background-color: red;
-    min-height: 196px;
-    overflow-y: auto;
-    width: 320px;
-}
-/* apps end */
+
 /* applications start*/
 #applications {
-	display: block;
+	display: none;
 }
 
 .checker {
@@ -76,9 +65,8 @@
 	opacity: 1;
 }
 
-#aaa>#applications:checked ~ #aaa>#apps {
-	/* display: block; */
-	background-color: red;
+#applications:checked + .appsBox {
+	display: block; 
 }
 /* applications end*/
 
@@ -123,7 +111,177 @@
 }
 /* ring account*/
 
+/* apps start*/
+.appsBox {
+	display: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: rgba(0,0,0,.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    color: #000;
+    max-height: 879px;
+    min-height: 196px;
+    height: 496px;
+    width: 320px;
+    overflow-y: auto;
+    overflow: hidden;
+    position: absolute;
+    right: 15px;
+    top: 44px;   
+    transition: height .2s ease-in-out; 
+}
+
+.appsBox > .mainApps {
+    min-height: 100px;
+    padding: 28px;
+    padding-right: 27px;
+    text-align: left;
+    white-space: normal;
+    width: 265px;	
+}
+
+.app {
+    display: inline-block;
+    height: 84px;
+    width: 84px;
+    text-align: center;  
+}
+
+.app:hover {
+	border: 1px solid #e5e5e5;
+}
+
+.app:focus {
+	border: 1px solid #e5e5e5;
+}
+
+a > .iconApp {
+    display: inline-block;
+    vertical-align: top;
+    height: 58px;
+    width: 64px;
+    background-image: url(../img/allIcons.png);
+    background-size: 64px 2410px;    
+    padding: 2px 2px 8px 2px;
+}
+
+a > .textApp {
+    display: block;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 84px;
+    text-overflow: ellipsis;	  	
+}
+
+.otherApps {
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    width: 320px;
+}
+
+.otherApps > input {
+	display: none;
+}
+
+#myAccount {
+	background-image: url(../img/account.jpg);
+	background-size: 67px 67px;
+}
+/* apps end */
+
+.logo {
+	padding-top: 250px;
+	text-align: center;
+}
+
+.mainLogo {
+	content: url("../img/googlelogo.png");
+}
+
+.searchInputBox {
+    display: flex;
+    border-radius: 2px;
+    border: none;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    height: 44px;
+    width: 584px;
+    margin: 0 auto;    
+    padding: 5px 8px 0 16px;
+}
+
+.searchInputBox > #leftPartSearchBox {
+    flex-grow: 9;
+}
+
+.searchInputBox > #rightPartSearchBox {
+	display: flex;
+    flex-grow: 0;
+}
+
+#searchText {
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: black;
+    outline: none;
+    height: 34px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+#rightPartSearchBox > #keyboard, #mic{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    padding: 0 8px;
+    width: 24px;
+    line-height: 44px;
+}
+
+#keyboard > span {
+    background: url(../img/tia.png) no-repeat center;
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
+
+#mic > span {
+    background: url(../img/mic.png) 0 0 no-repeat;
+    height: 24px;
+    width: 24px;
+    background-size: 24px;
+    vertical-align: middle;
+}    
+
+.searchButtonBox {
+	margin: 0 auto;
+	width: 584px;
+	padding: 5px 50px; 
+	text-align: center;
+}
+
+.searchButtonBox > #btn1, #btn2 {
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+    color: #757575;
+    cursor: pointer;
+    margin: 11px 4px;
+    min-width: 54px;
+    padding: 0 16px;
+    text-align: center;
+    height: 36px;
+}
 
 
-
-
+@media screen and (max-width: 380px) {
+	.simpleNav {
+		width: 58%;
+	}
+}
