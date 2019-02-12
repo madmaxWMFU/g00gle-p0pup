@@ -200,8 +200,8 @@
         color: black;
     }
     
-    .app>a:focus>.iconApp {
-        border: 1px solid #aeb5ff;
+    *:focus, .app>a:focus>.iconApp {
+        outline: 2px solid #aeb5ff;
     }
     
     a>.iconApp {
@@ -283,10 +283,16 @@
         display: none;
     }
     
-    .otherApps>label {
+    .otherApps>a {
+        cursor: pointer;
+        text-decoration: none;
+        color: rgba(0,0,0,0.8);
+    }
+
+    .otherApps>a>label {
         cursor: pointer;
     }
-    
+
     .linkToOtherApps {
         bottom: -295px;
         position: relative;
