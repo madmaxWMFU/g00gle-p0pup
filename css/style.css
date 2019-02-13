@@ -95,6 +95,15 @@
     display: none;
 }
 
+
+/* .otherApps:target {
+    display: none;
+}
+
+.otherApps:target .appsBox {
+    overflow-y: auto;
+} */
+
 .ring {
     background-color: rgba(0, 0, 0, .8);
     border-radius: 50%;
